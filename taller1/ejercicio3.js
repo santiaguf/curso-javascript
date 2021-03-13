@@ -3,10 +3,21 @@
 let ninos = parseInt(prompt("digite la cantidad de niños del salón"));
 let ninas = parseInt(prompt("digite la cantidad de niñas del salón"));
 
-let total = ninos+ninas;
+let totalEstudiantes = CalcularTotalEstudiantes(ninos,ninas);
 
-let porcentaje_ninos = Math.round((100 * ninos)/total);
-let porcentaje_ninas = Math.round((100 * ninas)/total);
+let PorcNinos =  CalcularPorcentaje(ninos,totalEstudiantes);
+let PorcNinas = CalcularPorcentaje(ninas, totalEstudiantes);
 
-alert("en el salón "+ porcentaje_ninos+ "% son niños ");
-alert("en el salón "+ porcentaje_ninas+ "% son niñas ");
+console.log("en el salón "+ PorcNinos+ "% son niños ");
+console.log("en el salón "+ PorcNinas+ "% son niñas ");
+
+
+function CalcularTotalEstudiantes(ninos,ninas){
+    let total = ninos+ninas;
+    return total;
+}
+
+function CalcularPorcentaje(alumnos,total){
+    let porcentajeEstudiantes = Math.round((100 * alumnos)/total);
+    return porcentajeEstudiantes;
+}
