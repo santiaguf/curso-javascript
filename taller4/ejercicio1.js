@@ -17,9 +17,7 @@ Si el siguiente elemento del vector, es mayor a numero_mayor, entonces reemplaza
 let vector = [];
 
 //2. llenamos el vector
-for(let i=0; i<10; i++){
-    vector[i] = parseInt(Math.random() * (100 - 0) + 0);
-}
+vector = llenarVector(vector);
 
 //3. asignarle los valores al primer elemento del vector
 let numero_mayor = vector[0];
@@ -27,14 +25,24 @@ let posicion_mayor = 1;
 let indice_mayor = 0;
 
 //4. recorremos el vector y calculamos el número mayor, la posición y el índice
-for(let i=0; i<vector.length; i++){
-    if(vector[i]> numero_mayor){
-        numero_mayor = vector[i];
-        indice_mayor = i;
-        posicion_mayor = i+1;
+calcularNumeroMayor(vector,numero_mayor,posicion_mayor,indice_mayor);
+
+function llenarVector(vector_funcion){
+    for(let i=0; i<10; i++){
+        vector_funcion[i] = parseInt(Math.random() * (100 - 0) + 0);
     }
+    return vector_funcion;
 }
 
-//5. mostramos el resultado
-console.log(vector);
-console.log("el número más grande del vector es: "+numero_mayor+" en el índice "+indice_mayor+" en la posición "+posicion_mayor);
+function calcularNumeroMayor(vector,n_mayor,p_mayor,i_mayor){
+    for(let i=0; i<vector.length; i++){
+        if(vector[i]> n_mayor){
+            n_mayor = vector[i];
+            i_mayor = i;
+            p_mayor = i+1;
+        }
+    }
+    //5. mostramos el resultado
+    console.log(vector);
+    console.log("el número más grande del vector es: "+n_mayor+" en el índice "+i_mayor+" en la posición "+p_mayor);
+}
