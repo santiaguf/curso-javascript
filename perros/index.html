@@ -80,7 +80,7 @@
     <img id="dog-photo" src="../assets/img/perro.png" alt="foto de perro" />
     <h1 id="dog-title">Perro</h1>
     <p class="lead" id="dog-temperament">aquí van las características del perro.</p>
-    <a id="botoncito" class="btn btn-lg btn-primary" href="../components/navbar/" role="button">Otro perro</a>
+    <a id="botoncito" class="btn btn-lg btn-primary"  role="button"  onclick="callApi();">Otro perro</a>
   </div>
 </main>
 
@@ -92,15 +92,17 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      var requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
-    };
+      function callApi(){
+        var requestOptions = {
+          method: 'GET',
+          redirect: 'follow'
+        };
 
-    fetch("https://api.thedogapi.com/v1/images/search", requestOptions)
-      .then(response => response.json())
-      .then(result => printData(result))
-      .catch(error => console.log('error', error));
+        fetch("https://api.thedogapi.com/v1/images/search", requestOptions)
+          .then(response => response.json())
+          .then(result => printData(result))
+          .catch(error => console.log('error', error));
+      }
 
     function printData(result){
 
