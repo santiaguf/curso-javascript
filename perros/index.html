@@ -112,11 +112,19 @@
 
       const title = document.querySelector('#dog-title');
 
-      title.textContent = `${result[0].breeds[0].name}`;
+      if(result[0].breeds[0] === undefined){
+            title.textContent = "la API no trajo la raza del perro";
+        }else {
+            title.textContent = `${result[0].breeds[0].name}`;
+        }
 
       const temperament = document.querySelector('#dog-temperament');
 
-      temperament.textContent = `${result[0].breeds[0].temperament}`;
+      if(result[0].breeds[0] === undefined){
+            temperament.textContent = "la API no trajo los temperamentos del perro";
+        }else {
+          temperament.textContent = `${result[0].breeds[0].temperament}`;
+        }
     }
 
     </script>
