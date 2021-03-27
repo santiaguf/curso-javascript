@@ -92,6 +92,9 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+
+      callApi();
+
       function callApi(){
         var requestOptions = {
           method: 'GET',
@@ -112,19 +115,11 @@
 
       const title = document.querySelector('#dog-title');
 
-      if(result[0].breeds[0] === undefined){
-            title.textContent = "la API no trajo la raza del perro";
-        }else {
-            title.textContent = `${result[0].breeds[0].name}`;
-        }
+        result[0].breeds[0] === undefined ? title.textContent = "la API no trajo la raza del perro" : title.textContent = `${result[0].breeds[0].name}`;
 
       const temperament = document.querySelector('#dog-temperament');
 
-      if(result[0].breeds[0] === undefined){
-            temperament.textContent = "la API no trajo los temperamentos del perro";
-        }else {
-          temperament.textContent = `${result[0].breeds[0].temperament}`;
-        }
+      result[0].breeds[0] === undefined ? temperament.textContent = "la API no trajo los temperamentos del perro" : temperament.textContent = `${result[0].breeds[0].temperament}`;
     }
 
     </script>
