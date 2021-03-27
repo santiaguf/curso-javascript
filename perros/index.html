@@ -25,6 +25,8 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
+        width: 100%;
+        border-radius: 50%;
       }
 
       #botoncito {
@@ -75,9 +77,9 @@
 
 <main class="container">
   <div class="bg-light p-5 rounded">
-    <img src="../assets/img/perro.png" alt="foto de perro" width="70%" />
-    <h1>Perro</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+    <img id="dog-photo" src="../assets/img/perro.png" alt="foto de perro" />
+    <h1 id="dog-title">Perro</h1>
+    <p class="lead" id="dog-temperament">aquí van las características del perro.</p>
     <a id="botoncito" class="btn btn-lg btn-primary" href="../components/navbar/" role="button">Otro perro</a>
   </div>
 </main>
@@ -96,10 +98,24 @@
     };
 
     fetch("https://api.thedogapi.com/v1/images/search", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
+      .then(response => response.json())
+      .then(result => printData(result))
       .catch(error => console.log('error', error));
 
+    function printData(result){
+
+      const image = document.querySelector('#dog-photo');
+
+      image.setAttribute('src', `${result[0].url}`);
+
+      const title = document.querySelector('#dog-title');
+
+      title.textContent = `${result[0].breeds[0].name}`;
+
+      const temperament = document.querySelector('#dog-temperament');
+
+      temperament.textContent = `${result[0].breeds[0].temperament}`;
+    }
 
     </script>
 
