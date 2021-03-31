@@ -21,10 +21,11 @@ el indiceMayor y la posicionMayor. */
 /* eslint-disable no-console */
 
 function llenarVector(vectorFuncion) {
+  const vectorNuevo = vectorFuncion;
   for (let i = 0; i < 10; i += 1) {
-    vectorFuncion[i] = parseInt((Math.random() * (100 - 0) + 0), 10);
+    vectorNuevo[i] = parseInt((Math.random() * (100 - 0) + 0), 10);
   }
-  return vectorFuncion;
+  return vectorNuevo;
 }
 
 // 1. creamos el vector vacío.
@@ -39,17 +40,20 @@ const posicionMayor = 1;
 const indiceMayor = 0;
 
 function calcularNumeroMayor(vectorCompleto, numMayor, posMayor, idxMayor) {
+  let mayorNum = numMayor;
+  let mayorIdx = idxMayor;
+  let mayorPos = posMayor;
   for (let i = 0; i < vectorCompleto.length; i += 1) {
     if (vectorCompleto[i] > numMayor) {
-      numMayor = vectorCompleto[i];
-      idxMayor = i;
-      posMayor = i + 1;
+      mayorNum = vectorCompleto[i];
+      mayorIdx = i;
+      mayorPos = i + 1;
     }
   }
 
   // 5. mostramos el resultado
   console.log(vector);
-  console.log(`el número más grande del vector es: ${numMayor} en el índice ${idxMayor} en la posición ${posMayor}`);
+  console.log(`el número más grande del vector es: ${mayorNum} en el índice ${mayorIdx} en la posición ${mayorPos}`);
 }
 
 // 4. recorremos el vector y calculamos el número mayor, la posición y el índice
