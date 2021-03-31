@@ -4,8 +4,11 @@ entradas: el número que da el usuario
 salidas: el listado de los números.
 */
 
-let numero = parseInt(prompt("diga un número "));
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 
-for (let i = 1; i <= numero; i++) {
-    console.log(i);
+const numero = parseInt(window.prompt('diga un número '), 10);
+
+for (let i = 1; i <= numero; i += 1) {
+  console.log(i);
 }

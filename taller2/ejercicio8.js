@@ -1,5 +1,6 @@
-/*  pídale al usuario 2 números, si el primero de los dos números es negativo, sume los números y muestre el resultado, y si por el contrario es positivo, réstelos y 
-muestre el resultado
+/*  pídale al usuario 2 números, si el primero de los dos números es
+negativo, sume los números y muestre el resultado, y si por el contrario
+es positivo, réstelos y muestre el resultado
 
 entradas: los dos números que brinda el usuario
 salidas: el resultado de la operación matemática
@@ -12,13 +13,16 @@ solución
 5. si es positivo, hacer la operación y mostrar en pantalla
 */
 
-let numero_uno = parseInt(prompt("querido usuario, digite el primer número"));
-let numero_dos = parseInt(prompt("ahora, digite el segundo número"));
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 
-if(numero_uno < 0){
-    let suma = numero_uno + numero_dos;
-    console.log("la suma de "+numero_uno+" y "+numero_dos+" es " + suma);
-}else{
-    let resta = numero_uno - numero_dos;
-    console.log("la resta de "+numero_uno+" y "+numero_dos+" es " + resta);
+const numeroUno = parseInt(window.prompt('querido usuario, digite el primer número'), 10);
+const numeroDos = parseInt(window.prompt('ahora, digite el segundo número'), 10);
+
+if (numeroUno < 0) {
+  const suma = numeroUno + numeroDos;
+  console.log(`la suma de ${numeroUno} y ${numeroDos} es ${suma}`);
+} else {
+  const resta = numeroUno - numeroDos;
+  console.log(`la resta de ${numeroUno} y ${numeroDos} es ${resta}`);
 }
