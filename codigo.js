@@ -1,5 +1,8 @@
-alert("hola, voy a calcular cuánto tiempo te falta para pensionarte en Colombia");
-let edad_pension = 62;
-let edad_persona = prompt("¿cuál es tu edad?");
-let tiempo_pension = edad_pension - edad_persona;
-alert("A usted le faltan " + tiempo_pension + " años para pensionarse");
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
+
+window.alert('hola, voy a calcular cuánto tiempo te falta para pensionarte en Colombia');
+const edadPension = 62;
+const edadPersona = window.prompt('¿cuál es tu edad?');
+const tiempoPension = edadPension - edadPersona;
+window.alert(`A usted le faltan ${tiempoPension} años para pensionarse`);
