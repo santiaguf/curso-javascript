@@ -1,4 +1,3 @@
-function suma(a, b) {
-  return a + b;
-}
-module.exports = suma;
+const suma = (a, b) => a + b;
+
+export default suma;
