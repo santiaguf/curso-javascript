@@ -1,3 +1,3 @@
-const suma = (a, b) => a + b;
+export const suma = (a, b) => a + b;
 
-export default suma;
+export const demoFunction = () => 'hi';
