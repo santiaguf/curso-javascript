@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guess The Number</title>
+  <link href="nes.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+  <style>
+    html,
+    body,
+    pre,
+    code,
+    kbd,
+    samp {
+      font-family: "Press Start 2P";
+    }
+
+    button {
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #gameplay {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #pregame {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #value {
+      width: 40%;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="nes-text is-primary">Guess the Number
+  </h1>
+
+  <div class="nes-container with-title is-centered">
+    <p class="title">Instructions</p>
+    <p>the computer creates a random number between 1 and 100, just guess the number, with limited guesses.</p>
+  </div>
+  &nbsp;
+
+  <div id="pregame">
+    <button id="playBtn" type="button" class="nes-btn is-primary">Play!</button>
+  </div>
+
+
+  <div id="gameplay">
+    <div id="result" class="nes-text">
+    </div>
+    <input type="number" id="value" name="value" class="nes-input hide">
+    &nbsp;
+    &nbsp;
+    <button id="sendBtn" type="button" class="nes-btn is-primary hide">guess!</button>
+  </div>
+
+
+  <footer>
+    <div class="nes-container is-rounded is-dark">
+      <p>created by Santiago Bernal
+        <a href="https://github.com/santiaguf/" target="_blank"><i class="nes-icon github is-small"></i></a>
+        <a href="https://linkedin.com/in/santiaguf/" target="_blank"><i class="nes-icon linkedin is-small"></i></a>
+        @santiaguf.
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
